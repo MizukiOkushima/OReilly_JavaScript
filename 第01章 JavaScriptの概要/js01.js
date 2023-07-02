@@ -207,4 +207,27 @@ function js1_3() {
   factorial2(5)                       // 120 1*2*3*4*5
 
 
+  // 簡単なオブジェクト指向の例 2次元座標を表現するJavaScriptクラスの定義
+  // 原点からの距離を計算するdistance()メソッドを定義する
+  class Point {                  // クラス名は大文字から記述するのが慣習
+    constructor(x, y) {          // 新しいインスタンスを初期化するコンストラクタ関数
+      this.x = x;                // thisキーワードで初期化中のオブジェクトを参照できる
+      this.y = y;                // 関数の引数をオブジェクトのプロパティとして保存する
+    }                            // return文は必要ない
+    distance() {                 // 原点からの距離を計算するメソッド
+      return Math.sqrt(          // x² + y² の平方根を返す
+        this.x * this.x +        // thisが参照しているのは
+        this.y * this.y          // distance メソッドが呼び出されているオブジェクト
+      );
+    }
+  }
+
+  // newキーワードとPoint()コンストラクタ関数を使ってPointオブジェクトを生成する
+  let p = new Point(1, 1);       // 座標(1,1)
+
+  // Pointオブジェクトp のメソッドを使う
+  p.distance()                   // Math.SQRT2
+
+
+
 };
