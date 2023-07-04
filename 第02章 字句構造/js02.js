@@ -69,10 +69,22 @@ $str
 // catch do from let super typeof
 // class else function new switch var
 
-
 // 将来的な予約語
 // 歴史的な理由でargumentsとevalは識別子として使えない
 // enum implements interface package private protected public
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+// 2.5 Unicode
+//////////////////////////////////////////////////////////////////////////////////////
+
+// 文字列やコメントにUnicode文字コードを使用可能
+// 識別子には一般的にASCII文字と数字を使うのが一般的だが
+// JavaScriptにはUnicode文字集合の文字や数字、表意文字を識別子に設定可能（絵文字は使用不可）
+// 定数や変数に数学記号や英語以外の言語の名前も使用できる
+
+const π = 3.14;
+const sí = true;
 
 
 function js2_1() {
