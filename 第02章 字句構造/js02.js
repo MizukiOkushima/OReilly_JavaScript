@@ -43,6 +43,36 @@ true           // 論理値
 false          // もう1つの論理値
 null           // オブジェクトがないことを表す
 
+//////////////////////////////////////////////////////////////////////////////////////
+// 2.4 識別子と予約語
+//////////////////////////////////////////////////////////////////////////////////////
+
+// 識別子 名前のこと
+// JavaScriptでは識別子を使って定数や変数、プロパティ、関数、クラスを指定する
+// 特定のループのラベルとして使うこともある
+// 識別子の戦闘の文字はUnicode文字、アンダースコア(_)、ドル記号($)のいずれかである必要がある
+// 識別子の先頭に数字は使えない
+// 予約後は識別子として使えない
+
+my_variable_name
+v13
+_dummy
+$str
+
+// 予約語
+// from、set、targetは識別子として使用可能
+// as const export get null target void
+// async continue extends if of this while
+// await debugger false import return throw with
+// break default finally in set true yield
+// case delete for instanceof static try
+// catch do from let super typeof
+// class else function new switch var
+
+
+// 将来的な予約語
+// 歴史的な理由でargumentsとevalは識別子として使えない
+// enum implements interface package private protected public
 
 
 function js2_1() {
