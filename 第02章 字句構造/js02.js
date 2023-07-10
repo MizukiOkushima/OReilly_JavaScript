@@ -152,8 +152,8 @@ a = 3; b = 4;
 
 let a
 a
-  =
-  3
+=
+3
 console.log(a)
 
 // 上記コードの場合、JavaScriptインタプリタは下記のように解釈する
