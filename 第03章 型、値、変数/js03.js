@@ -158,6 +158,23 @@ Math.log(100) / Math.LN10    // 底が 10 の 100 の対数（100 の常用対�
 Math.log(512) / Math.LN2     // 底が 2 の512 の対数
 Math.exp(3)                  // Math.E の3 乗
 
+// ES6 から下記の関数も使用可能
+
+Math.cbrt(27)                // 3: 立方根
+Math.hypot(3, 4)             // 5: 引数を自乗したものの総和の平方根
+Math.log10(100)              // 2: 常用対数
+Math.log2(1024)              // 10: 底が 2 の対数
+Math.log1p(x)                // (1+x) の自然対数 x が小さい値の場合、こちらが正確
+Math.expm1(x)                // Math.exp(x)-1; Math.log1p() の逆関数
+Math.sign(x)                 // 引数が0より小さいで0 0より大きいで-1 0、1を返す
+Math.imul(2, 3)              // 6: 32 ビット整数の高速乗算
+Math.clz32(0xf)              // 28: 32 ビットバイナリ表現での先頭の0 の数
+Math.trunc(3.9)              // 3: 小数部を削除して整数に変換する
+Math.fround(x)               // 最近傍の32 ビット浮動小数点を返す
+Math.sinh(x)                 // 双曲線正弦関数 Math.cosh()、Math.tanh() も
+Math.asinh(x)                // 逆双曲線正弦関数 Math.acosh()、Math.atanh() も
+
+
 function js3_1() {
 
 }
