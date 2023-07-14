@@ -174,6 +174,55 @@ Math.fround(x)               // 最近傍の32 ビット浮動小数点を返す
 Math.sinh(x)                 // 双曲線正弦関数 Math.cosh()、Math.tanh() も
 Math.asinh(x)                // 逆双曲線正弦関数 Math.acosh()、Math.atanh() も
 
+// JavaScriptでは算術演算中にオーバーフローやアンダーフローが発生した場合や、0除算を行った場合でもエラーが発生しない
+// 算術演算の結果が表現可能な最大値より大きくなった場合（オーバーフロー）、算術演算の結果は無限大（Infinity）という特殊な値になる
+// 同様にある負数の絶対値が表現可能な負数の絶対値の最大値を超えた場合、演算結果は特殊な無限大負値（-Infinity）になる
+// 無限大にどんな値を加算、減算、乗算、除算しても無限大のまま（符号は変わる場合はある）
+
+// 算術演算の結果の絶対値が表現可能な最小よりも0に近づいた場合、アンダーフローが発生する
+// この場合、JavaScriptは0を返す
+// 負の値に対してアンダーフローが発生した場合、JavaScriptは「負の0」という特殊な値を返す
+// 「負の0」は通常の0と区別がつかないので気にする必要はない
+
+// 0除算もJavaScriptではエラーにならない
+// 無限大や負の無限大が返されるだけであるが例外がある
+// それは0を0で割ったときで計算結果が不定となり、特殊な値NaN（not-a-number）になる
+// 無限大を無限大で割った場合や、負数の平方根を求めた場合、数値に変換できないオペランドに対して算術演算を行った場合にもNaNという結果になる
+
+// JavaScriptにはInfinityとNaNというグローバル変数が予め定義されている
+// それぞれ正の無限大と不定値（not-a-number）が格納されている
+// Numberオブジェクトにも同様のプロパティが存在する
+
+Infinity                      // 表現できないくらい大きな正数（無限大）
+Number.POSITIVE_INFINITY      // 同じく無限大
+1 / 0                         // Infinity
+Number.MAX_VALUE * 2          // Infinity; オーバーフローが発生
+-Infinity                     // 絶対値が表現できないくらい大きな負数（負の無限大）
+Number.NEGATIVE_INFINITY      // 同じく負の無限大
+-1 / 0                        // -Infinity
+-Number.MAX_VALUE * 2         // -Infinity
+
+NaN                           // 不定値
+Number.NaN                    // 同じ値の別の表記方法
+0 / 0                         // NaN
+Infinity / Infinity           // NaN
+
+Number.MIN_VALUE / 2          // 0: アンダーフローが発生
+-Number.MIN_VALUE / 2         // -0: 負の0
+-1 / Infinity                 // -0: これも負の0
+-0
+
+// ES6 のNumber には、以下のようなプロパティも定義されている。
+
+Number.parseInt()             // グローバルなparseInt()関数と同じ
+Number.parseFloat()           // グローバルなparseFloat()関数と同じ
+Number.isNaN(x)               // xがNaN値かどうかを返す
+Number.isFinite(x)            // xが有限な数値かどうかを返す
+Number.isInteger(x)           // xが整数かどうかを返す
+Number.isSafeInteger(x)       // xが -(2**53) から 2**53 までの整数かどうかを返す
+Number.MIN_SAFE_INTEGER       // -( 2 ** 53 -1)
+Number.MAX_SAFE_INTEGER       // 2 ** 53 -1
+Number.EPSILON                // 2 ** -52: 数値間の差異の中で、最小の差異
 
 function js3_1() {
 
