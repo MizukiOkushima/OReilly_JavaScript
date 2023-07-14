@@ -224,6 +224,27 @@ Number.MIN_SAFE_INTEGER       // -( 2 ** 53 -1)
 Number.MAX_SAFE_INTEGER       // 2 ** 53 -1
 Number.EPSILON                // 2 ** -52: 数値間の差異の中で、最小の差異
 
+// javaScriptのNaN値にはどの値と比較しても等しいと判定されない
+// NaN値同士でも等しく判定されない
+// x === NaN と記述してもNaN値であるか判定できない
+// x != x と記述するか、 Number.isNaN(x) を使う（この式はxがNaNのときにtrueになる）
+
+// グローバル関数の isNaN() は Number.isNaN() と同じ動きをする
+// 引数がNaN値か引数が数値に変換できない場合にこの関数はtrueを返す
+// 同様に Number.isFinite() は引数がNaN、無限大、負の無限大ではない数値の場合trueを返す
+// グローバル関数の isFinite() 関数は引数が有限の数値か、有限の数値に変換出来る場合にtrueを返す
+
+// 負の0は少し特徴がある
+// 負の0は通常の0と等しいと判定される
+// JavaScriptの同値演算子でも等しいと判定されるため、事実上区別できない
+// 除算を使ったときのみ違いが生じる
+
+let zero = 0;         // 通常の0
+let negz = -0;        // 負の0
+zero === negz         // true: 通常の0 と負の0 は等しい
+1 / zero === 1 / negz // false: 無限大と負の無限大は等しくない
+
+
 function js3_1() {
 
 }
