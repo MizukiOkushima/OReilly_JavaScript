@@ -1510,7 +1510,15 @@ function toCartesian(r, theta) {
 let [r, thera] = toPolar(1.0, 1.0); // r == Math.sqrt(2); theta == Math.PI / 4
 let [x, y] = toCartesian(r. theta); // [x, y] == [1.0, 1.0]
 
+// すでに学習したように、JavaScriptのさまざまなループで変数や定数を宣言できる
+// 同じように、分割代入も使用可能
+// 次のコードは、オブジェクトのすべてのプロパティの名前/値のペアに対してループを行う
+// このループ中で、分割代入を使って2つの要素を持つ配列から値を抽出して、別々の変数に代入する
 
+let o = { x: 1, y: 2 }; // ループを行うオブジェクト
+for(const [name, value] of Object.entries(o)) {
+    console.log(name, value);   // 「x 1」と「y 2」を出力する
+}
 
 function js3_1() {
 
