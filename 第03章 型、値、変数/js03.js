@@ -1547,6 +1547,17 @@ let [a, [b, c]] = [1, [2, 2.5], 3]; // a == 1; b == 2; c == 2.5
 
 let [first, ...rest] = "Hello"; // first == "H"; rest == ["e", "l", "l", "o"]
 
+// 分割代入の右辺にはオブジェクトを使うことができる
+// この場合、左辺にはオブジェクトリテラルのように中括弧中にカンマで区切って変数を記述する
+
+let transparent = {r: 0.0, g: 0.0, b: 0.0, a: 1.0}; // RGBA色
+let {r, g, b} = transparent;                        // r == 0.0; g == 0.0; b == 0.0
+
+// 次の例ではMathオブジェクトのグローバル関数を変数にコピーしている
+// 三角関数をたくさん使う場合に便利である
+
+const {sin, cos, tan} = Math;   // const sin=Math.sin, cos=Math.cos, tan=Math.tan;と同じ
+
 
 function js3_1() {
 
