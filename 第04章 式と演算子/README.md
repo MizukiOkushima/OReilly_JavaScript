@@ -365,7 +365,8 @@ Nという列はオペランドの数を表す<br>
 以下の項では、優先順位や結合性、オペランドの型という概念について説明する<br>
 その後に各演算子について説明する<br>
 <br>
-表4-1 JavaScript演算子.png 参照<br>
+表4-1 JavaScript演算子<br>
+![表4-1 JavaScript演算子](https://github.com/MizukiOkushima/OReilly_JavaScript/assets/95268598/599aac57-4406-4a90-9311-599d6095c6aa)
 
 ### 4.7.1 オペランドの数
 演算子はオペランドの数で3種類に大別できる<br>
@@ -1110,6 +1111,9 @@ total = total + salesTax;
 <br>
 ほかにも、-=、*=、&=などがある<br>
 詳細については表4-2を参照<br>
+<img width="271" alt="表4-2 代入演算子" src="https://github.com/MizukiOkushima/OReilly_JavaScript/assets/95268598/65338339-fd38-4841-86d9-aab1268944e1">
+
+
 <br>
 一般に、opを演算子とすると、次の形式で記述できる<br>
 
@@ -1362,7 +1366,8 @@ typeofは単項演算子である<br>
 オペランドの値は任意である<br>
 typeof演算子は、オペランドのデータ型を示す文字列を返す<br>
 JavaScriptのさまざまな値に対してtypeof演算子を使ったときの値を、表4-3にまとめる<br>
-<br>
+<img width="322" alt="表4-3 typeof演算子が返す値" src="https://github.com/MizukiOkushima/OReilly_JavaScript/assets/95268598/eec185ab-5c93-48f1-9bf3-56bfb7848f96">
+
 typeof演算子の使用例を紹介する<br>
 
 ```JavaScript
