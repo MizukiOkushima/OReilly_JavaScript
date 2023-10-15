@@ -194,8 +194,8 @@ Number.POSITIVE_INFINITY      // 同じく無限大
 Number.MAX_VALUE * 2          // Infinity; オーバーフローが発生
 - Infinity                    // 絶対値が表現できないくらい大きな負数（負の無限大）
 Number.NEGATIVE_INFINITY      // 同じく負の無限大
--1 / 0                       // -Infinity
--Number.MAX_VALUE * 2        // -Infinity
+-1 / 0                        // -Infinity
+-Number.MAX_VALUE * 2         // -Infinity
 
 NaN                           // 不定値
 Number.NaN                    // 同じ値の別の表記方法
@@ -203,8 +203,8 @@ Number.NaN                    // 同じ値の別の表記方法
 Infinity / Infinity           // NaN
 
 Number.MIN_VALUE / 2          // 0: アンダーフローが発生
--Number.MIN_VALUE / 2        // -0: 負の0
--1 / Infinity                // -0: これも負の0
+-Number.MIN_VALUE / 2         // -0: 負の0
+-1 / Infinity                 // -0: これも負の0
 -0
 ```
 
@@ -458,22 +458,22 @@ JavaScriptエスケープシーケンスの文字の前にバックスラッシ�
 例えば \# と記述した場合は # と同じ意味になる<br>
 前章のES5で改行の直前にバックスラッシュを記述することで文字列のリテラルを複数行にまたがって記述可能<br>
 
-```JavaScript
-// JavaScriptエスケープシーケンス
-\0      // NUL文字（\u0000）
-\b      // バックスペース（\u0008）
-\t      // 水平タブ（\u0009）
-\n      // 改行（\u000A）
-\v      // 垂直タブ（\u000B）
-\f      // 改頁（\u000C）
-\r      // 復帰（\u000D）
-\"      // 二重引用符（\u0022）
-\’      // アポストロフィまたは単一引用符（\u0027）
-\\      // バックスラッシュ（\u005C）
-\xnn    // 2桁の16進数nnで指定するUnicode文字
-\unnnn  // 4桁の16進数nnnnで指定するUnicode文字
-\u{ n }   // 符号位置nで指定するUnicode文字　nは0から10FFFFまでの1桁から6桁の16進数（ES6）
-```
+JavaScriptエスケープシーケンス
+| シーケンス | 意味 |
+| ------------- | ------------- |
+| \0 | NUL文字（\u0000） |
+| \b | バックスペース（\u0008） |
+| \t | 水平タブ（\u0009） |
+| \n | 改行（\u000A） |
+| \v | 垂直タブ（\u000B） |
+| \f | 改頁（\u000C） |
+| \r | 復帰（\u000D） |
+| \" | 二重引用符（\u0022） |
+| \’ | アポストロフィまたは単一引用符（\u0027） |
+| \\ | バックスラッシュ（\u005C） |
+| \xnn | 2桁の16進数nnで指定するUnicode文字 |
+| \unnnn | 4桁の16進数nnnnで指定するUnicode文字 |
+| \u{ n } | 符号位置nで指定するUnicode文字　nは0から10FFFFまでの1桁から6桁の16進数（ES6) |
 
 ### 3.3.3 文字列の操作
 JavaScriptには文字列を連結する機能がある<br>
@@ -558,7 +558,7 @@ replace()やtoUpperCase()などのメソッドでは新しい文字列が返さ�
 
 ```JavaScript
 let s = "hello, world";
-s[0]                    // "h"
+s[0]                      // "h"
 s[s.length - 1]           // "d"
 ```
 
@@ -637,8 +637,8 @@ RegExpは非常に協力でテキスト処理でよく使われる<br>
 
 ```JavaScript
 /^ HTML /;            // 文字列の先頭のHTMLという文字列にマッチ
-/[1-9][0-9]*/;      // 0以外の数字の後に続く任意の個数の数字にマッチ
-/\bjavascript\b/i;  // 大文字小文字区別なしに「javascript」という単語にマッチ
+/[1-9][0-9]*/;        // 0以外の数字の後に続く任意の個数の数字にマッチ
+/\bjavascript\b/i;    // 大文字小文字区別なしに「javascript」という単語にマッチ
 ```
 
 RegExpオブジェクトには便利なメソッドがたくさん用意されている<br>
@@ -912,7 +912,7 @@ s                   // "hello": 元の文字列は変更されていない
 let o = { x: 1 };   // このオブジェクトを例にする
 o.x = 2;            // プロパティの値を変更して、オブジェクトを更新する
 o.y = 3;            // 新しいプロパティを追加して、さらに更新する
-let a = [1, 2, 3];    // 配列も可変
+let a = [1, 2, 3];  // 配列も可変
 a[0] = 0;           // 配列の要素の値を変更する
 a[3] = 4;           // 配列に新しい要素を追加する
 ```
@@ -923,9 +923,9 @@ a[3] = 4;           // 配列に新しい要素を追加する
 
 ```JavaScript
 let o = { x: 1 }, p = { x: 1 }; // 同じプロパティを持つ2つのオブジェクト
-o === p                     // false: 別々のオブジェクトは等しいと判定されない
-let a = [], b = [];         // 2つの別々の空の配列
-a === b                     // false: 別々の配列は等しいと判定されない
+o === p                         // false: 別々のオブジェクトは等しいと判定されない
+let a = [], b = [];             // 2つの別々の空の配列
+a === b                         // false: 別々の配列は等しいと判定されない
 ```
 
 オブジェクトはJavaScriptの基本型と区別するために参照型と呼ばれることもある<br>
@@ -948,11 +948,11 @@ a === b         // true: aとbは同じオブジェクトを参照するので�
 ```JavaScript
 // forループを使ったコピー
 let a = ["a", "b", "c"];              // コピーしたい配列
-let b = [];                         // コピー先になる別の配列
-for (let i = 0; i < a.length; i++) { // a[]のインデックスごとに
-    b[i] = a[i];                    // aの要素をbにコピーする
+let b = [];                           // コピー先になる別の配列
+for (let i = 0; i < a.length; i++) {  // a[]のインデックスごとに
+    b[i] = a[i];                      // aの要素をbにコピーする
 }
-let c = Array.from(b);              // ES6ではArray.from()で配列をコピーできる
+let c = Array.from(b);                // ES6ではArray.from()で配列をコピーできる
 ```
 
 同様に2つのオブジェクトや配列を比較したいのであれば、プロパティや要素を比較する必要がある<br>
@@ -965,7 +965,7 @@ function equalArrays(a, b) {
     for (let i = 0; i < a.length; i++) {
         if (a[i] !== b[i]) return false;         // 1つでも違っていれば等しくない
     }
-    return true;                                // すべて同じであれば等しい
+    return true;                                 // すべて同じであれば等しい
 }
 ```
 
@@ -1062,10 +1062,10 @@ JavaScriptの演算子には暗黙に型変換を行うものがある<br>
 このような暗黙の変換処理を使うために、次のような型変換記法がさまざまなコードで使われる<br>
 
 ```JavaScript
-x + ""  // String(x)
+x + ""   // String(x)
 + x      // Number(x)
-x - 0     // Number(x)
-!!x     // Boolean(x): !を2回記述していることに注意
+x - 0    // Number(x)
+!!x      // Boolean(x): !を2回記述していることに注意
 ```
 
 数値を変形したり解釈したりする処理はプログラムでよく行われる処理である<br>
@@ -1233,10 +1233,10 @@ RegExpクラスのtoString()メソッドは、RegExpオブジェクトをRegExp�
 
 ```JavaScript
 [1, 2, 3].toString()                  // "1,2,3"
-(function (x) { f(x); }).toString()  // "function(x) { f(x); }"
-/\d + /g.toString()                   / / "/\d+/g"
+(function (x) { f(x); }).toString()   // "function(x) { f(x); }"
+/\d + /g.toString()                   // "/\d+/g"
 let d = new Date(2020, 0, 1);
-d.toString()                        // "Wed Jan 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)"
+d.toString()                          // "Wed Jan 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)"
 ```
 
 もう1つの型変換メソッドは、valueOf()メソッドである<br>
