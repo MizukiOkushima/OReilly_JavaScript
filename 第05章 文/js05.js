@@ -567,3 +567,6 @@ for (variable in object) {
 for (let p in o) {          // oのプロパティ名を変数pに代入する
     console.log(o[p]);      // 各プロパティの値を出力する
 }
+
+// for/in文を実行すると、JavaScriptインタプリタは、まずobject式を消化する
+// 評価結果がnullやundefinedの場合、インタプリタはループ文をスキップし、ループ文の次の文に移動する
